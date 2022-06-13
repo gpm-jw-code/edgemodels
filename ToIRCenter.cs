@@ -54,13 +54,34 @@ namespace EdgeModels.ToIRCenter
 
         public int Index { set; get; }
 
-        public string MonitorLineName => string.Join(",", Segments.Select(sg => sg.MonitorLineName).Distinct());
+        private string _MonitorLineName = "Line1";
+        private string _MonitorECBName = "ECB1";
 
-        public string MonitorECBName => string.Join(",", Segments.Select(sg => sg.MonitorECBName).Distinct());
+        public string MonitorLineName
+        {
+            get => _MonitorLineName;
+            set
+            {
+                _MonitorLineName = value;
+                foreach (var segment in Segments)
+                    segment.MonitorLineName = value;
+            }
+        }
+
+        public string MonitorECBName
+        {
+            get => _MonitorECBName;
+            set
+            {
+                _MonitorECBName = value;
+                foreach (var segment in Segments)
+                    segment.MonitorECBName = value;
+            }
+        }
 
         public DateTime UpdateTime { get; set; } = DateTime.MinValue;
         public bool Active { get; set; } = true;
-
+        public bool DownloadPixelData { get; set; } = false;
         public clsSensorSegment[] Segments { get; set; } = new clsSensorSegment[16];
 
 
@@ -89,7 +110,8 @@ namespace EdgeModels.ToIRCenter
         public string MonitorCompoentName { get; set; } = "Breaker1";//customize
         public double MaxTemperature { get; set; }
         public double AvgTemperature { get; set; }
-        public double[,] PixelTemperatuers { get; set; } = new double[32, 32];
+        public double[] pixelTemperatureList { get; set; } = new double[64];
+        public double[,] Pixel2DTemperatuers { get; set; } = new double[32, 32];
     }
 
 
