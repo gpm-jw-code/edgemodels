@@ -31,6 +31,10 @@ namespace EdgeModels.ToIRCenter
         /// 用於modbus tcp 連接的Port
         /// </summary>
         public int Port { get; set; } = 502;
+        public int ConnectedSensorNum { get; set; } = 0;
+        public string Version { get; set; } = "V1.00";
+        public bool ControllerAbnormal { get; set; } = false;
+        public bool AnySensorAbnormal { get; set; } = false;
 
 
 
@@ -81,6 +85,7 @@ namespace EdgeModels.ToIRCenter
 
         public DateTime UpdateTime { get; set; } = DateTime.MinValue;
         public bool Active { get; set; } = true;
+        public bool Abnormal { get; set; } = false;
         public bool DownloadPixelData { get; set; } = false;
         public clsSensorSegment[] Segments { get; set; } = new clsSensorSegment[16];
 
