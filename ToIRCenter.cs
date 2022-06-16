@@ -33,8 +33,8 @@ namespace EdgeModels.ToIRCenter
         public int Port { get; set; } = 502;
         public int ConnectedSensorNum { get; set; } = 0;
         public string Version { get; set; } = "V1.00";
-        public bool ControllerAbnormal { get; set; } = false;
-        public bool AnySensorAbnormal { get; set; } = false;
+        public bool ControllerAbnormal { get; set; } = true;
+        public bool AnySensorAbnormal { get; set; } = true;
         public int RunPercent { get; set; } = 0;
     }
 
