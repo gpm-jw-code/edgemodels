@@ -35,9 +35,7 @@ namespace EdgeModels.ToIRCenter
         public string Version { get; set; } = "V1.00";
         public bool ControllerAbnormal { get; set; } = false;
         public bool AnySensorAbnormal { get; set; } = false;
-
-
-
+        public int RunPercent { get; set; } = 0;
     }
 
     /// <summary>
