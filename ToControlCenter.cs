@@ -13,6 +13,7 @@ namespace EdgeModels.ToControlCenter
         public int Port = 0;
         public string SensorType = "";
         public string DataUnit = "";
+        public bool IsOnlySaveData = false;
     }
 
     public class cls_SensorStatus_Mqtt
