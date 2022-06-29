@@ -28,9 +28,9 @@ namespace EdgeModels.ToControlCenter
     {
         public string SensorName = "";
         public DateTime TimeLog;
-        public Dictionary<string, double> Dict_RawData;
+        public Dictionary<string, double> Dict_RawData = new Dictionary<string, double>();
         public bool IsArrayData;
-        public Dictionary<string, List<double>> Dict_ListRawData;
+        public Dictionary<string, List<double>> Dict_ListRawData = new Dictionary<string, List<double>>();
         public List<DateTime> List_TimeLog;
     }
 
